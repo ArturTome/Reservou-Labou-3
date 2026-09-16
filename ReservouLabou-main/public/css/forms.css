@@ -1,0 +1,79 @@
+form{
+
+    background:white;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+
+}
+
+label{
+
+    display:block;
+
+    margin-top:15px;
+
+    margin-bottom:6px;
+
+    font-weight:bold;
+
+}
+
+input,
+
+select,
+
+textarea{
+
+    width:100%;
+
+    padding:10px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+button{
+
+    margin-top:20px;
+
+    padding:12px;
+
+    background:#1565c0;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    width:100%;
+
+}
+
+button:hover{
+
+    background:#0d47a1;
+
+}
+
+.login-box{
+
+    max-width:420px;
+
+    margin:50px auto;
+
+}
