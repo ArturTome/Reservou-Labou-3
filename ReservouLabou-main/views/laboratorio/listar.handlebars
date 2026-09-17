@@ -1,0 +1,71 @@
+<h1>Laboratórios</h1>
+
+<div class="top-bar">
+
+    <a href="/laboratorios/novo" class="btn">
+
+        Novo Laboratório
+
+    </a>
+
+</div>
+
+<table>
+
+    <thead>
+
+        <tr>
+
+            <th>ID</th>
+
+            <th>Nome</th>
+
+            <th>Entrada</th>
+
+            <th>Saída</th>
+
+            <th>Ações</th>
+
+        </tr>
+
+    </thead>
+
+    <tbody>
+
+        {{#each laboratorios}}
+
+        <tr>
+
+            <td>{{IdLab}}</td>
+
+            <td>{{NomeLab}}</td>
+
+            <td>{{HoraEntrada}}</td>
+
+            <td>{{HoraSaida}}</td>
+
+            <td>
+
+                <a href="/laboratorios/editar/{{IdLab}}">
+
+                    Editar
+
+                </a>
+
+                |
+
+                <a href="/laboratorios/excluir/{{IdLab}}">
+
+                    Excluir
+
+                </a>
+
+            </td>
+
+        </tr>
+
+        {{/each}}
+
+    </tbody>
+
+</table>
