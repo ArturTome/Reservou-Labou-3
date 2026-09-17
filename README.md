@@ -1,9 +1,11 @@
 # Reservou-Labou-3
 
--- ============================================================
+- Banco de dados, rode isso antes de rodar o codigo.
+
+-- ================================================
 -- Banco de dados: reservaslabs
 -- Gerado a partir dos Models Sequelize fornecidos
--- ============================================================
+-- ================================================
 
 CREATE DATABASE IF NOT EXISTS `reservaslabs`
     CHARACTER SET utf8mb4
@@ -26,9 +28,9 @@ DROP TABLE IF EXISTS `Usuario`;
 
 SET FOREIGN_KEY_CHECKS = 1;
 
--- ============================================================
+-- ========
 -- USUARIO
--- ============================================================
+-- ========
 
 CREATE TABLE `Usuario` (
     `IdUser` INT NOT NULL AUTO_INCREMENT,
@@ -40,9 +42,9 @@ CREATE TABLE `Usuario` (
     UNIQUE KEY `uk_usuario_login` (`Login`)
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- ============
 -- LABORATORIO
--- ============================================================
+-- ============
 
 CREATE TABLE `Laboratorio` (
     `IdLab` INT NOT NULL AUTO_INCREMENT,
@@ -54,9 +56,9 @@ CREATE TABLE `Laboratorio` (
     UNIQUE KEY `uk_laboratorio_nome` (`NomeLab`)
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- ============
 -- EQUIPAMENTO
--- ============================================================
+-- ============
 
 CREATE TABLE `Equipamento` (
     `IdEquip` INT NOT NULL AUTO_INCREMENT,
@@ -69,9 +71,9 @@ CREATE TABLE `Equipamento` (
     PRIMARY KEY (`IdEquip`)
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- =================
 -- DIAS DISPONIVEIS
--- ============================================================
+-- =================
 
 CREATE TABLE `DiasDispo` (
     `IdDia` INT NOT NULL AUTO_INCREMENT,
@@ -80,9 +82,9 @@ CREATE TABLE `DiasDispo` (
     PRIMARY KEY (`IdDia`)
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- ==================================
 -- RELACIONAMENTO LABORATORIO x DIAS
--- ============================================================
+-- ==================================
 
 CREATE TABLE `Lab_DiasDispo` (
     `IdLab` INT NOT NULL,
@@ -103,9 +105,9 @@ CREATE TABLE `Lab_DiasDispo` (
         ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- ==================================
 -- RELACIONAMENTO EQUIPAMENTO x DIAS
--- ============================================================
+-- ==================================
 
 CREATE TABLE `Equip_DiasDispo` (
     `IdEquip` INT NOT NULL,
@@ -126,9 +128,9 @@ CREATE TABLE `Equip_DiasDispo` (
         ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- =======================
 -- RESERVA DE LABORATORIO
--- ============================================================
+-- =======================
 
 CREATE TABLE `ReservaLaboratorio` (
     `IdReservaLab` INT NOT NULL AUTO_INCREMENT,
@@ -155,9 +157,9 @@ CREATE TABLE `ReservaLaboratorio` (
         ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- =======================
 -- RESERVA DE EQUIPAMENTO
--- ============================================================
+-- =======================
 
 CREATE TABLE `ReservaEquipamento` (
     `IdReservaEquip` INT NOT NULL AUTO_INCREMENT,
@@ -176,14 +178,14 @@ CREATE TABLE `ReservaEquipamento` (
         ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- =====================================================
 -- ITENS DA RESERVA DE EQUIPAMENTO
 --
 -- IMPORTANTE:
 -- Esta e a unica tabela Reserva_Equipamento.
 -- Os arquivos ReservaEquipamentoItem.js e
 -- Rserva_Equipamento.js representam a mesma estrutura.
--- ============================================================
+-- =====================================================
 
 CREATE TABLE `Reserva_Equipamento` (
     `IdReservaEquip` INT NOT NULL,
@@ -205,9 +207,9 @@ CREATE TABLE `Reserva_Equipamento` (
         ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- ==========
 -- RELATORIO
--- ============================================================
+-- ==========
 
 CREATE TABLE `Relatorio` (
     `IdRelatorio` INT NOT NULL AUTO_INCREMENT,
@@ -231,9 +233,9 @@ CREATE TABLE `Relatorio` (
         ON DELETE SET NULL
 ) ENGINE=InnoDB;
 
--- ============================================================
+-- ============
 -- DIAS PADRAO
--- ============================================================
+-- ============
 
 INSERT INTO `DiasDispo` (`Dia`) VALUES
 ('Domingo'),
@@ -244,6 +246,6 @@ INSERT INTO `DiasDispo` (`Dia`) VALUES
 ('Sexta-feira'),
 ('Sabado');
 
--- ============================================================
+-- ====
 -- FIM
--- ============================================================
+-- ====
